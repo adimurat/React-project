@@ -1,0 +1,42 @@
+header{
+    background-color: #212121;
+    
+    
+}
+
+.header_row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+    padding: 20px 30px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 213px;
+}
+
+ul{
+    display: flex;
+    column-gap: 30px;
+}
+ul li {
+    color: whitesmoke;
+    list-style: none;
+}
+
+ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.icons ul{
+    display: flex;
+    align-items: center;
+}
+
