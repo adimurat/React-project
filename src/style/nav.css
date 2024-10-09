@@ -40,10 +40,9 @@ ul li a{
     align-items: center;
 }
 
-/* Горизонтальное расположение кнопок */
 .auth-buttons {
-    display: flex; /* Установить кнопки в один ряд */
-    gap: 10px; /* Отступ между кнопками */
+    display: flex; 
+    gap: 10px; 
 }
 
 .sign-in-button, .sign-up-button {
@@ -59,39 +58,38 @@ ul li a{
     background-color: #9C8A5C;
 }
 .sign-out-button {
-    background-color: #C0AF84; /* Цвет фона */
-    color: white; /* Цвет текста */
-    border: none; /* Убираем границу */
-    border-radius: 5px; /* Скругление углов */
-    padding: 10px 15px; /* Отступы */
-    cursor: pointer; /* Указатель курсора */
-    font-size: 16px; /* Размер шрифта */
-    transition: background-color 0.3s, transform 0.3s; /* Плавные переходы */
+    background-color: #C0AF84; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    cursor: pointer;
+    font-size: 16px; 
+    transition: background-color 0.3s, transform 0.3s; 
 }
 
 .sign-out-button:hover {
-    background-color: #A78C64; /* Цвет фона при наведении */
-    transform: scale(1.05); /* Увеличение кнопки при наведении */
+    background-color: #A78C64; 
+    transform: scale(1.05); 
 }
 
 .sign-out-button:focus {
-    outline: none; /* Убираем обводку при фокусе */
+    outline: none; 
 }
 .profile-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #C0AF84; /* Зеленый цвет фона */
-    color: white; /* Цвет текста */
-    border: none; /* Без границ */
-    padding: 10px 15px; /* Отступы */
-    border-radius: 5px; /* Закругленные углы */
-    cursor: pointer; /* Указатель при наведении */
-    text-decoration: none; /* Убираем подчеркивание */
-    transition: background-color 0.3s ease; /* Плавный переход цвета фона */
+    background-color: #C0AF84; 
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    text-decoration: none; 
+    transition: background-color 0.3s ease; 
 }
 
-/* Стиль для модального окна */
 .modal {
     position: fixed;
     top: 0;

@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Nav from './menu'; // Убедитесь, что Nav не содержит Router
+import Nav from './menu'; 
 import Main from './componets/main';
 import Footer from './componets/footer';
-import UserProfile from './UserProfile'; // Импортируйте компонент профиля
+import UserProfile from './UserProfile'; 
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -11,8 +11,8 @@ function App() {
     <div className="App">
       <Nav />
       <Routes>
-        <Route path="/" element={<Main />} /> {/* Главная страница */}
-        <Route path="/profile" element={<UserProfile />} /> {/* Маршрут для профиля пользователя */}
+        <Route path="/" element={<Main />} /> 
+        <Route path="/profile" element={<UserProfile />} /> 
       </Routes>
       <Footer />
     </div>

@@ -6,7 +6,7 @@ import './style/common.css';
 import icon1 from './image/facebook-16.png';
 import icon2 from './image/insta.png';
 import icon3 from './image/twit.png';
-import { createUser, authenticateUser } from './api'; // Импортируем функции из api
+import { createUser, authenticateUser } from './api'; 
 
 function Nav() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -127,7 +127,6 @@ function Nav() {
                 </div>
             </header>
 
-            {/* Форма для входа */}
             {isSignInOpen && (
                 <div className="modal">
                     <div className="modal-content">
@@ -154,7 +153,7 @@ function Nav() {
                 </div>
             )}
 
-            {/* Форма для регистрации */}
+            
             {isSignUpOpen && (
                 <div className="modal">
                     <div className="modal-content">
