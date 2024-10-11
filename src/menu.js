@@ -81,12 +81,12 @@ function Nav() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <a href="#!" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                                    <a href="/OurBookshop" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                                         Our bookshop
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#!" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                                    <a href="/Feedback" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                                         Feedback
                                     </a>
                                 </li>

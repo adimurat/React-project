@@ -5,10 +5,12 @@ import App from './App';
 import Section1 from './pages/Section1';
 import reportWebVitals from './reportWebVitals';
 import Section2 from './pages/section2';
+import Section3 from './pages/section3'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Section4 from './pages/section4';
 
 const router = createBrowserRouter([
   {
@@ -20,9 +22,17 @@ const router = createBrowserRouter([
     element: <Section1/>,
   },
   {
-    path: "/Books of month",
+    path: "/BooksOfMonth",
     element: <Section2/>,
   },
+  {
+    path: "/OurBookshop",
+    element: <Section3/>
+  },
+  {
+    path: "/FeedBack",
+    element: <Section4/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
