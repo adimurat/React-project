@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import '../pages/UserProfile.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -68,6 +68,20 @@ const ProfilePage = () => {
         }
     }, []);
 
+    const userInfo = useMemo(() => {
+        if (!user) return null;
+        return (
+            <div>
+                <p><strong>Name:</strong> <span className="user-info">{user.name}</span></p>
+                <p><strong>Email:</strong> <span className="user-info">{user.email}</span></p>
+            </div>
+        );
+    }, [user]);
+
+    const loadingMessage = useMemo(() => {
+        return <p className="loading-message">Loading user data...</p>;
+    }, []);
+
     if (error) {
         return <div>Error: {error}</div>;
     }
@@ -98,15 +112,14 @@ const ProfilePage = () => {
                         </>
                     ) : (
                         <>
-                            <p><strong>Name:</strong> <span className="user-info">{user.name}</span></p>
-                            <p><strong>Email:</strong> <span className="user-info">{user.email}</span></p>
+                            {userInfo}
                             <button onClick={() => setIsEditing(true)}>Edit Profile</button>
                         </>
                     )}
                     <button onClick={handleSignOut}>Sign Out</button>
                 </div>
             ) : (
-                <p className="loading-message">Loading user data...</p>
+                loadingMessage
             )}
         </div>
     );

@@ -1,52 +1,54 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import '../pages/section2.css';
 import SideBar from "../componets/sideBar";
 import Product from "../componets/product";
-
 
 function Section2() {
     const [books, setBooks] = useState([]); 
     const [error, setError] = useState(null); 
     const [selectedGenre, setSelectedGenre] = useState(null);
-   
-    const fetchBooks = async () => {
+
+    const fetchBooks = useCallback(async () => {
         try {
-            const response = await fetch('http://localhost:5002/books'); 
+            const response = await fetch('http://localhost:5002/books');
             if (!response.ok) {
                 throw new Error('Error fetching books');
             }
             const data = await response.json();
             setBooks(data);
         } catch (err) {
-            setError(err.message); 
+            setError(err.message);
         }
-    };
-    const fetchBooksByGenre = async (genre) => {
+    }, []);
+
+    const fetchBooksByGenre = useCallback(async (genre) => {
         try {
-            const response = await fetch(`http://localhost:5002/books?genre=${genre}`); 
+            const response = await fetch(`http://localhost:5002/books?genre=${genre}`);
             const data = await response.json();
             setBooks(data);
         } catch (error) {
             console.error('Error fetching books:', error);
         }
-    };
-    const handleSelectGenre = (genre) => {
+    }, []);
+
+    const handleSelectGenre = useCallback((genre) => {
         setSelectedGenre(genre);
-        fetchBooksByGenre(genre); 
-    };
+        fetchBooksByGenre(genre);
+    }, [fetchBooksByGenre]);
+
     useEffect(() => {
         fetchBooks();
-    }, []);
+    }, [fetchBooks]);
 
     return (
         <>
             <div>
                 <h1 style={{ textTransform: 'uppercase', margin: '0', padding: '0' }}>Popular Books</h1>
             </div>
-            <SideBar onSelectGenre={handleSelectGenre}/>
-                {error && <p className="error-message">{error}</p>}
-                <div className="product">
-                    {books.length > 0 ? (
+            <SideBar onSelectGenre={handleSelectGenre} />
+            {error && <p className="error-message">{error}</p>}
+            <div className="product">
+                {books.length > 0 ? (
                     books.map((book) => (
                         <div className="product-item" key={book.id}>
                             <Product
@@ -56,13 +58,12 @@ function Section2() {
                                 price={book.price}
                                 info1={book.description}
                             />
-                            </div>
+                        </div>
                     ))
                 ) : (
                     <p>Loading books...</p> 
                 )}
             </div>
-
         </>
     );
 }

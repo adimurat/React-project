@@ -20,8 +20,8 @@
     },
     {
       "id": "763c",
-      "name": "Adik",
-      "email": "Adik@example.com",
+      "name": "Adilet",
+      "email": "Adi1k@example.com",
       "password": "123456789"
     },
     {
@@ -41,41 +41,46 @@
       "name": "adi",
       "email": "adlet.murat.04@bk.ru",
       "password": "123546as"
+    },
+    {
+      "id": "d228",
+      "name": "Yera",
+      "email": "ereke@example.com",
+      "password": "123"
     }
-  ], 
-
-  "books":  [
-      {
-        "id": 1,
-        "title": "The Great Gatsby",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKi5lknrw7SIwZ01RQRqyvtXz2bFxrUsGVpA&s",
-        "description": "A novel set in the Jazz Age.",
-        "genre": "Fantasy",
-        "price": "1500"
-      },
-      {
-        "id": 2,
-        "title": "1984",
-        "coverImage": "https://anylang.net/sites/default/files/styles/book_image/public/covers/1984.jpg?itok=IVpqqKj5",
-        "description": "A dystopian novel about totalitarianism.",
-        "genre": "Horror",
-        "price": "1800"
-      },
-      {
-        "id": 3,
-        "title": "4865",
-        "coverImage": "https://anylang.net/sites/default/files/styles/book_image/public/covers/1984.jpg?itok=IVpqqKj5",
-        "description": "A dystopian novel about totalitarianism.",
-        "genre": "Romance",
-        "price": "800"
-      },
-      {
-        "id": 4,
-        "title": "J5",
-        "coverImage": "https://anylang.net/sites/default/files/styles/book_image/public/covers/1984.jpg?itok=IVpqqKj5",
-        "description": "A dystopian novel about totalitarianism.",
-        "genre": "Science Fiction",
-        "price":"45000"
-      }
-    ]
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "The Great Gatsby",
+      "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKi5lknrw7SIwZ01RQRqyvtXz2bFxrUsGVpA&s",
+      "description": "A novel set in the Jazz Age.",
+      "genre": "Fantasy",
+      "price": "1500"
+    },
+    {
+      "id": 2,
+      "title": "1984",
+      "coverImage": "https://anylang.net/sites/default/files/styles/book_image/public/covers/1984.jpg?itok=IVpqqKj5",
+      "description": "A dystopian novel about totalitarianism.",
+      "genre": "Horror",
+      "price": "1800"
+    },
+    {
+      "id": 3,
+      "title": "4865",
+      "coverImage": "https://anylang.net/sites/default/files/styles/book_image/public/covers/1984.jpg?itok=IVpqqKj5",
+      "description": "A dystopian novel about totalitarianism.",
+      "genre": "Romance",
+      "price": "800"
+    },
+    {
+      "id": 4,
+      "title": "J5",
+      "coverImage": "https://anylang.net/sites/default/files/styles/book_image/public/covers/1984.jpg?itok=IVpqqKj5",
+      "description": "A dystopian novel about totalitarianism.",
+      "genre": "Science Fiction",
+      "price": "45000"
+    }
+  ]
 }

@@ -3,6 +3,7 @@ import {Button} from 'antd'
 import bg from '../image/bg.jpg'
 import '../style/main.css'
 import '../style/common.css'
+import { Link } from "react-router-dom";
 
 
 
@@ -32,14 +33,17 @@ function Main(){
                         <p className='content_info'>We deliver 5 books every 
                             month based on your personal preferences.
                         </p>
+                        <Link to="/OurBookshop">
                         <Button type='primary' style={{width: '142px', height: '47px',
                              backgroundColor: 'white', color: 'black', fontSize: '15px', fontWeight: '500',
                             marginTop: '30px',
 
                             }}
                         onMouseEnter={onMouseEnter}
-                        onMouseLeave={onMouseLeave}>Learn More
+                        onMouseLeave={onMouseLeave}
+                        >Learn More
                         </Button>
+                        </Link>
                     </div>
                 </div>
             </main>
