@@ -1,19 +1,70 @@
-import React from "react";
-import '../pages/section2.css'
-import book1 from '../image/book_1.jpg'
+import React, { useEffect, useState } from "react";
+import '../pages/section2.css';
 import SideBar from "../componets/sideBar";
 import Product from "../componets/product";
 
 
 function Section2() {
-    return <>
+    const [books, setBooks] = useState([]); 
+    const [error, setError] = useState(null); 
+    const [selectedGenre, setSelectedGenre] = useState(null);
+   
+    const fetchBooks = async () => {
+        try {
+            const response = await fetch('http://localhost:5002/books'); 
+            if (!response.ok) {
+                throw new Error('Error fetching books');
+            }
+            const data = await response.json();
+            setBooks(data);
+        } catch (err) {
+            setError(err.message); 
+        }
+    };
+    const fetchBooksByGenre = async (genre) => {
+        try {
+            const response = await fetch(`http://localhost:5002/books?genre=${genre}`); 
+            const data = await response.json();
+            setBooks(data);
+        } catch (error) {
+            console.error('Error fetching books:', error);
+        }
+    };
+    const handleSelectGenre = (genre) => {
+        setSelectedGenre(genre);
+        fetchBooksByGenre(genre); 
+    };
+    useEffect(() => {
+        fetchBooks();
+    }, []);
+
+    return (
+        <>
             <div>
-                <h1 style={{textTransform: 'uppercase', margin: '0', padding: '0'}}>Popular books</h1>
+                <h1 style={{ textTransform: 'uppercase', margin: '0', padding: '0' }}>Popular Books</h1>
             </div>
-            <SideBar/>
-            <div className="product">
-               <Product title="Book" image={book1} price="1500" info1="asdasdsadaasdasasddasasdadsadsadddddddd"/>
+            <SideBar onSelectGenre={handleSelectGenre}/>
+                {error && <p className="error-message">{error}</p>}
+                <div className="product">
+                    {books.length > 0 ? (
+                    books.map((book) => (
+                        <div className="product-item" key={book.id}>
+                            <Product
+                                key={book.id}
+                                title={book.title}
+                                image={book.coverImage} 
+                                price={book.price}
+                                info1={book.description}
+                            />
+                            </div>
+                    ))
+                ) : (
+                    <p>Loading books...</p> 
+                )}
             </div>
+
         </>
+    );
 }
+
 export default Section2;
