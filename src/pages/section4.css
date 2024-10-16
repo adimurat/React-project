@@ -1,0 +1,27 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows of equal height */
+    row-gap: 10px; /* Gap between images */
+    column-gap: 20px;
+    
+    
+}
+
+.grid-container img{
+    width: 650px;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+}
+
+.grid-main{
+    padding-bottom: 130px;
+    text-align: center;
+    font-family: Arial, sans-serif; 
+    background: #212121;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
