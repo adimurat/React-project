@@ -8,6 +8,7 @@ let Genres = [
     { id: 2, title: "Horror" },
     { id: 3, title: "Romance" },
     { id: 4, title: "Science Fiction" }
+    
 ];
 
 function SideBar({ onSelectGenre }) { 

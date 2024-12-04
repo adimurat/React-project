@@ -8,6 +8,7 @@ import Section2 from './pages/section2';
 import ProfilePage from './pages/UserProfile';
 import Section3 from './pages/section3';
 import Section4 from './pages/section4';
+import ContactUs from './pages/contactus'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart/>
+  },
+  { 
+    path: "/contact", 
+    element: <ContactUs/> 
   }
 ]);
 

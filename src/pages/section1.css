@@ -3,10 +3,12 @@
 
 
 .section_info{
+    margin-left: 110px;
     display: flex;
     align-items: center;
     padding-top: 100px;
     column-gap: 30px;
+
 }
 
 .container{

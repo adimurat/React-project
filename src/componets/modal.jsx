@@ -1,29 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../style/modal.css";
 
 function Modal({ isOpen, onClose, product, onReviewAdd }) {
     const [reviewText, setReviewText] = useState("");
     const [showReviews, setShowReviews] = useState(false);
+    const [localReviews, setLocalReviews] = useState([]);
+
+    // Сбрасываем локальные отзывы при изменении выбранного продукта
+    useEffect(() => {
+        if (product) {
+            setLocalReviews(product.reviews || []);
+        }
+    }, [product]);
 
     const handleAddReview = async () => {
         if (!reviewText.trim()) {
             alert("Введите текст отзыва!");
             return;
         }
-    
+
         // Добавляем новый отзыв в локальный список
-        const updatedReviews = [...product.reviews, reviewText];
-    
-        // Обновляем локальное состояние в родительском компоненте
-        onReviewAdd(product.id, updatedReviews);
-    
+        const updatedReviews = [...localReviews, reviewText];
+        setLocalReviews(updatedReviews); // Обновляем локальное состояние отзывов
+        onReviewAdd(product.id, updatedReviews); // Передаем обновления в родительский компонент
+
         // Очищаем поле ввода
         setReviewText("");
-    
+
         // Отправляем изменения на сервер
         try {
             const updatedProduct = { ...product, reviews: updatedReviews };
-    
+
             const response = await fetch(`http://localhost:3000/books/${product.id}`, {
                 method: "PUT",
                 headers: {
@@ -31,18 +38,17 @@ function Modal({ isOpen, onClose, product, onReviewAdd }) {
                 },
                 body: JSON.stringify(updatedProduct),
             });
-    
+
             if (!response.ok) {
                 throw new Error("Ошибка при обновлении отзыва на сервере");
             }
-    
+
             alert("Отзыв добавлен!");
         } catch (error) {
             console.error("Ошибка при добавлении отзыва:", error);
             alert("Ошибка при добавлении отзыва на сервер. Попробуйте снова.");
         }
     };
-    
 
     const toggleShowReviews = () => {
         setShowReviews(!showReviews);
@@ -68,19 +74,18 @@ function Modal({ isOpen, onClose, product, onReviewAdd }) {
                     </h3>
                     {showReviews && (
                         <div className="reviews-scroll">
-                            {product.reviews.length > 0 ? (
+                            {localReviews.length > 0 ? (
                                 <ul>
-                                    {product.reviews.map((review, index) => (
+                                    {localReviews.map((review, index) => (
                                         <li key={index} style={{ color: 'black' }}>{review}</li>
                                     ))}
                                 </ul>
                             ) : (
-                                <p>Отзывов пока нет.</p>
+                                <p style={{ color: 'black' }}>Отзывов пока нет.</p>
                             )}
                         </div>
                     )}
                 </div>
-
 
                 <div className="add-review">
                     <textarea

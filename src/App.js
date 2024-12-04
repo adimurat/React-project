@@ -8,6 +8,7 @@ import { authenticateUser } from './api';
 import ProfilePage from './pages/UserProfile';
 import Section2 from './pages/section2';
 import Cart from './pages/cart';
+import ContactUs from './pages/contactus';
 
 function App() {
   const [user, setUser] = useState(null); 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} /> 
         <Route path="/books" element={<Section2 />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/contactus" element={<ContactUs />} />
       </Routes>
       <Footer />
     </div>

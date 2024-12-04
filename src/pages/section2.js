@@ -88,7 +88,7 @@ function Section2() {
                 isOpen={modalOpen}
                 onClose={handleCloseModal}
                 product={selectedProduct}
-                onReviewAdd={handleReviewAdd} // Передаем функцию обновления отзывов
+                onReviewAdd={handleReviewAdd} 
             />
         </>
     );

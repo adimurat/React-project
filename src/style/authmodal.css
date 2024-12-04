@@ -1,0 +1,112 @@
+
+.sign-in-button, .sign-up-button {
+    padding: 10px 20px;
+    background-color: #C0AF84;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sign-in-button:hover, .sign-up-button:hover {
+    background-color: #9C8A5C;
+}
+.sign-out-button {
+    background-color: #C0AF84; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    cursor: pointer;
+    font-size: 16px; 
+    transition: background-color 0.3s, transform 0.3s; 
+}
+
+.sign-out-button:hover {
+    background-color: #A78C64; 
+    transform: scale(1.05); 
+}
+
+.sign-out-button:focus {
+    outline: none; 
+}
+.profile-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C0AF84; 
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    text-decoration: none; 
+    transition: background-color 0.3s ease; 
+}
+
+.modal1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content1 {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: whitesmoke;
+}
+
+.modal-content1 h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #C0AF84;
+}
+
+.modal-content1 form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content1 label {
+    margin-bottom: 5px;
+    color: #C0AF84;
+}
+
+.modal-content1 input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content1 button {
+    padding: 10px;
+    background-color: #C0AF84;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.modal-content1 button:hover {
+    background-color: #9C8A5C;
+}
+
+.modal-content1 button[type="button"] {
+    background-color: #555;
+}
+
+.modal-content1 button[type="button"]:hover {
+    background-color: #777;
+}

@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import '../pages/section1.css';
 import { Button } from "antd";
 import bookImage from '../image/book.png';
-import { authenticateUser, createUser } from '../api'; 
+import { authenticateUser, createUser } from '../api';
 import { useNavigate } from 'react-router-dom';
 import Nav from '../menu';
+import { AuthModal } from '../componets/authmodal';
 
 function Section1() {
     const [isSignInOpen, setIsSignInOpen] = useState(false);
     const [isSignUpOpen, setIsSignUpOpen] = useState(false);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [name, setName] = useState('');
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
@@ -25,7 +23,7 @@ function Section1() {
         e.target.style.border = 'none';
     };
 
-    const handleSignIn = async (e) => {
+    const handleSignIn = async (e, email, password) => {
         e.preventDefault();
         try {
             const user = await authenticateUser(email, password);
@@ -37,7 +35,7 @@ function Section1() {
         }
     };
 
-    const handleSignUp = async (e) => {
+    const handleSignUp = async (e, name, email, password) => {
         e.preventDefault();
         const newUser = { name, email, password };
         try {
@@ -52,7 +50,7 @@ function Section1() {
     return (
         <>
             <div className="container" style={{ height: '100vh' }}>
-                <Nav className="NavBar"/>
+                <Nav className="NavBar" />
                 <div className="section_info">
                     <div>
                         <img src={bookImage} className="section-img" alt="Book" />
@@ -63,72 +61,39 @@ function Section1() {
                         <p className="sub_info">Every month, we send our subscribers a box with the five best books of the month. These are bestsellers and classic books that deserve to be read and placed on your bookshelf. We select books according to the preferences of our customers. In addition, you can always attend our events, join the book club or just visit our offline store in Almaty.</p>
                         {error && <p className="error">{error}</p>}
                         <span className="buttons">
-                            <Button type="primary" className="btnLog" onMouseEnter={Enter} onMouseLeave={Leave} onClick={() => setIsSignInOpen(true)}>Login</Button>
-                            <Button className="btnSign" onMouseEnter={Enter} onMouseLeave={(e) => {
-                                e.target.style.backgroundColor = 'white';
-                                e.target.style.color = 'black';
-                            }} onClick={() => setIsSignUpOpen(true)}>Sign up</Button>
+                            <Button
+                                type="primary"
+                                className="btnLog"
+                                onMouseEnter={Enter}
+                                onMouseLeave={Leave}
+                                onClick={() => setIsSignInOpen(true)}
+                            >
+                                Login
+                            </Button>
+                            <Button
+                                className="btnSign"
+                                onMouseEnter={Enter}
+                                onMouseLeave={(e) => {
+                                    e.target.style.backgroundColor = 'white';
+                                    e.target.style.color = 'black';
+                                }}
+                                onClick={() => setIsSignUpOpen(true)}
+                            >
+                                Sign up
+                            </Button>
                         </span>
                     </div>
                 </div>
             </div>
-            {isSignInOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <h2>Sign In</h2>
-                        <form onSubmit={handleSignIn}>
-                            <label>Email:</label>
-                            <input
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                            <label>Password:</label>
-                            <input
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                            <button type="submit">Sign In</button>
-                            <button type="button" onClick={() => setIsSignInOpen(false)}>Cancel</button>
-                        </form>
-                    </div>
-                </div>
-            )}
-            {isSignUpOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <h2>Sign Up</h2>
-                        <form onSubmit={handleSignUp}>
-                            <label>Name:</label>
-                            <input
-                                type="text"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                required
-                            />
-                            <label>Email:</label>
-                            <input
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                            <label>Password:</label>
-                            <input
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                            <button type="submit">Sign Up</button>
-                            <button type="button" onClick={() => setIsSignUpOpen(false)}>Cancel</button>
-                        </form>
-                    </div>
-                </div>
-            )}
+            <AuthModal
+                isSignInOpen={isSignInOpen}
+                isSignUpOpen={isSignUpOpen}
+                closeSignIn={() => setIsSignInOpen(false)}
+                closeSignUp={() => setIsSignUpOpen(false)}
+                handleSignIn={handleSignIn}
+                handleSignUp={handleSignUp}
+                error={error}
+            />
         </>
     );
 }
