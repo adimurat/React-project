@@ -49,12 +49,13 @@ function Section2() {
         setModalOpen(false);
     };
 
-    // Функция для обновления отзывов
+    // Обновление отзывов для конкретной книги
     const handleReviewAdd = (bookId, updatedReviews) => {
-        // Обновляем только отзывы книги с соответствующим bookId
-        setBooks(books.map(book =>
-            book.id === bookId ? { ...book, reviews: updatedReviews } : book
-        ));
+        setBooks((prevBooks) =>
+            prevBooks.map((book) =>
+                book.id === bookId ? { ...book, reviews: updatedReviews } : book
+            )
+        );
     };
 
     useEffect(() => {
@@ -75,7 +76,7 @@ function Section2() {
                                 image={book.coverImage}
                                 price={book.price}
                                 info1={book.description}
-                                onImageClick={() => handleImageClick(book)} 
+                                onImageClick={() => handleImageClick(book)}
                             />
                         </div>
                     ))
@@ -83,10 +84,10 @@ function Section2() {
                     <p>Загрузка книг...</p>
                 )}
             </div>
-            <Modal 
-                isOpen={modalOpen} 
-                onClose={handleCloseModal} 
-                product={selectedProduct} 
+            <Modal
+                isOpen={modalOpen}
+                onClose={handleCloseModal}
+                product={selectedProduct}
                 onReviewAdd={handleReviewAdd} // Передаем функцию обновления отзывов
             />
         </>

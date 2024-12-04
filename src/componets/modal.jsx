@@ -10,24 +10,20 @@ function Modal({ isOpen, onClose, product, onReviewAdd }) {
             alert("Введите текст отзыва!");
             return;
         }
-
+    
         // Добавляем новый отзыв в локальный список
         const updatedReviews = [...product.reviews, reviewText];
-
-        // Обновляем отзывы в родительском компоненте только для текущей книги
+    
+        // Обновляем локальное состояние в родительском компоненте
         onReviewAdd(product.id, updatedReviews);
-
+    
         // Очищаем поле ввода
         setReviewText("");
-        alert("Отзыв добавлен!");
-
-        // Отправляем на сервер для обновления данных
+    
+        // Отправляем изменения на сервер
         try {
-            const updatedProduct = {
-                ...product,
-                reviews: updatedReviews,
-            };
-
+            const updatedProduct = { ...product, reviews: updatedReviews };
+    
             const response = await fetch(`http://localhost:3000/books/${product.id}`, {
                 method: "PUT",
                 headers: {
@@ -35,15 +31,18 @@ function Modal({ isOpen, onClose, product, onReviewAdd }) {
                 },
                 body: JSON.stringify(updatedProduct),
             });
-
+    
             if (!response.ok) {
                 throw new Error("Ошибка при обновлении отзыва на сервере");
             }
+    
+            alert("Отзыв добавлен!");
         } catch (error) {
             console.error("Ошибка при добавлении отзыва:", error);
-            alert("Ошибка при добавлении отзыва. Попробуйте снова.");
+            alert("Ошибка при добавлении отзыва на сервер. Попробуйте снова.");
         }
     };
+    
 
     const toggleShowReviews = () => {
         setShowReviews(!showReviews);
@@ -55,20 +54,20 @@ function Modal({ isOpen, onClose, product, onReviewAdd }) {
         <div className="modal-overlay" onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <h2>{product.title}</h2>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div style={{ display: "flex", alignItems: "center" }}>
                     <img src={product.coverImage} alt={product.title} />
                     <p className="modal-p">{product.description2}</p>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <p className="modal-p"><strong>Price: </strong> ${product.price}</p>
-                    {product.rating && <p style={{ color: 'black' }}><strong>Оценка:</strong> {product.rating} / 5</p>}
+                    {product.rating && <p style={{ color: "black" }}><strong>Оценка:</strong> {product.rating} / 5</p>}
                 </div>
                 <div>
                     <h3 onClick={toggleShowReviews} style={{ cursor: "pointer", color: "black" }}>
                         {showReviews ? "Скрыть отзывы" : "Показать отзывы"}
                     </h3>
                     {showReviews && (
-                        <div>
+                        <div className="reviews-scroll">
                             {product.reviews.length > 0 ? (
                                 <ul>
                                     {product.reviews.map((review, index) => (
@@ -81,6 +80,7 @@ function Modal({ isOpen, onClose, product, onReviewAdd }) {
                         </div>
                     )}
                 </div>
+
 
                 <div className="add-review">
                     <textarea

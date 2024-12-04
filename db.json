@@ -74,13 +74,13 @@
       "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKi5lknrw7SIwZ01RQRqyvtXz2bFxrUsGVpA&s",
       "description": "A novel set in the Jazz Age.",
       "genre": "Fantasy",
-      "price": "1500",
+      "price": 1500,
       "description2": "The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with Jay Gatsby, the mysterious millionaire with an obsession to reunite with his former lover, Daisy Buchanan.",
       "rating": 4.5,
       "reviews": [
-        "acaca",
-        "фывфывыф",
-        "фывфывыфвфы"
+        "An amazing classic!",
+        "Great read, loved the characters."
+        
       ]
     },
     {
@@ -89,9 +89,12 @@
       "coverImage": "https://anylang.net/sites/default/files/styles/book_image/public/covers/1984.jpg?itok=IVpqqKj5",
       "description": "A dystopian novel about totalitarianism.",
       "genre": "Horror",
-      "price": "1800",
+      "price": 1800,
+      "description2": "A chilling dystopia where truth is manipulated, and freedom is an illusion.",
+      "rating": 4.7,
       "reviews": [
-        "фывфывфывфыыфвфыв"
+        "Thought-provoking and relevant.",
+        "Absolutely terrifying vision of the future."
       ]
     },
     {
@@ -100,9 +103,11 @@
       "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROXcRkMBWPAQHM1il6uE4VDvXCmvnef2op1w&s",
       "description": "The first book in the epic fantasy series about the quest to destroy the One Ring.",
       "genre": "Fantasy",
-      "price": "1800",
+      "price": 1800,
+      "description2": "The beginning of an epic journey to save Middle-earth from the dark powers of Sauron.",
+      "rating": 4.8,
       "reviews": [
-        "фывфыв"
+        
       ]
     },
     {
@@ -111,8 +116,13 @@
       "coverImage": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1353277730i/11588.jpg",
       "description": "A horror novel about a family trapped in a haunted hotel.",
       "genre": "Horror",
-      "price": "1700",
-      "reviews": []
+      "price": 1700,
+      "description2": "A chilling horror story about isolation and madness in a haunted hotel.",
+      "rating": 4.6,
+      "reviews": [
+        "Terrifying and unforgettable.",
+        "Stephen King at his best!"
+      ]
     },
     {
       "id": "5",
@@ -120,7 +130,9 @@
       "coverImage": "https://m.media-amazon.com/images/I/712P0p5cXIL._AC_UF1000,1000_QL80_.jpg",
       "description": "A classic romantic novel about social class and relationships.",
       "genre": "Romance",
-      "price": "1400",
+      "price": 1400,
+      "description2": "Jane Austen's timeless story of love and social standing.",
+      "rating": 4.9,
       "reviews": []
     },
     {
@@ -129,7 +141,9 @@
       "coverImage": "https://m.media-amazon.com/images/I/81nq+ewtkcL._AC_UF1000,1000_QL80_.jpg",
       "description": "A science fiction novel about the politics of a desert planet and its precious resource.",
       "genre": "Science Fiction",
-      "price": "2000",
+      "price": 2000,
+      "description2": "An epic tale of politics, religion, and survival on the desert planet Arrakis.",
+      "rating": 4.8,
       "reviews": []
     },
     {
@@ -138,7 +152,9 @@
       "coverImage": "https://m.media-amazon.com/images/I/71Jzezm8CBL._AC_UF1000,1000_QL80_.jpg",
       "description": "A fantasy novel set in a world where noble families vie for control of the Iron Throne.",
       "genre": "Fantasy",
-      "price": "2200",
+      "price": 2200,
+      "description2": "The first book in George R.R. Martin's epic fantasy series.",
+      "rating": 4.7,
       "reviews": []
     },
     {
@@ -147,7 +163,9 @@
       "coverImage": "https://m.media-amazon.com/images/I/91XT4tkFFeL._UF1000,1000_QL80_.jpg",
       "description": "A dystopian novel about a totalitarian society where women have no rights.",
       "genre": "Science Fiction",
-      "price": "1500",
+      "price": 1500,
+      "description2": "A powerful and haunting dystopian story of oppression and resilience.",
+      "rating": 4.7,
       "reviews": []
     },
     {
@@ -156,7 +174,9 @@
       "coverImage": "https://m.media-amazon.com/images/M/MV5BMTY5ODc1NjU5N15BMl5BanBnXkFtZTcwMTUyNDg3Mg@@._V1_FMjpg_UX1000_.jpg",
       "description": "A novel about vanity, morality, and the supernatural.",
       "genre": "Horror",
-      "price": "1600",
+      "price": 1600,
+      "description2": "Oscar Wilde's classic tale of beauty, corruption, and immortality.",
+      "rating": 4.5,
       "reviews": []
     },
     {
@@ -165,7 +185,9 @@
       "coverImage": "https://m.media-amazon.com/images/I/91KPfMSahBL.jpg",
       "description": "A classic fantasy novel about four children who discover a magical world.",
       "genre": "Fantasy",
-      "price": "1900",
+      "price": 1900,
+      "description2": "C.S. Lewis's beloved tale of adventure in the magical land of Narnia.",
+      "rating": 4.8,
       "reviews": []
     }
   ],
@@ -232,6 +254,13 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKi5lknrw7SIwZ01RQRqyvtXz2bFxrUsGVpA&s",
       "price": "1500",
       "info1": "A novel set in the Jazz Age."
+    },
+    {
+      "id": "64ce",
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROXcRkMBWPAQHM1il6uE4VDvXCmvnef2op1w&s",
+      "price": 1800,
+      "info1": "The first book in the epic fantasy series about the quest to destroy the One Ring."
     }
   ],
   "checkout": [
@@ -354,6 +383,82 @@
         }
       ],
       "totalPrice": 3600
+    },
+    {
+      "id": "3bf3",
+      "items": [
+        {
+          "id": "1ddc",
+          "title": "1984",
+          "image": "https://anylang.net/sites/default/files/styles/book_image/public/covers/1984.jpg?itok=IVpqqKj5",
+          "price": "1800",
+          "info1": "A dystopian novel about totalitarianism."
+        },
+        {
+          "id": "3d65",
+          "title": "1984",
+          "image": "https://anylang.net/sites/default/files/styles/book_image/public/covers/1984.jpg?itok=IVpqqKj5",
+          "price": "1800",
+          "info1": "A dystopian novel about totalitarianism."
+        },
+        {
+          "id": "97ab",
+          "title": "The Great Gatsby",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKi5lknrw7SIwZ01RQRqyvtXz2bFxrUsGVpA&s",
+          "price": "1500",
+          "info1": "A novel set in the Jazz Age."
+        },
+        {
+          "id": "ceb9",
+          "title": "The Great Gatsby",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKi5lknrw7SIwZ01RQRqyvtXz2bFxrUsGVpA&s",
+          "price": "1500",
+          "info1": "A novel set in the Jazz Age."
+        },
+        {
+          "id": "59a6",
+          "title": "The Great Gatsby",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKi5lknrw7SIwZ01RQRqyvtXz2bFxrUsGVpA&s",
+          "price": "1500",
+          "info1": "A novel set in the Jazz Age."
+        },
+        {
+          "id": "8739",
+          "title": "The Great Gatsby",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKi5lknrw7SIwZ01RQRqyvtXz2bFxrUsGVpA&s",
+          "price": "1500",
+          "info1": "A novel set in the Jazz Age."
+        },
+        {
+          "id": "f737",
+          "title": "The Great Gatsby",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKi5lknrw7SIwZ01RQRqyvtXz2bFxrUsGVpA&s",
+          "price": "1500",
+          "info1": "A novel set in the Jazz Age."
+        },
+        {
+          "id": "4f76",
+          "title": "The Great Gatsby",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKi5lknrw7SIwZ01RQRqyvtXz2bFxrUsGVpA&s",
+          "price": "1500",
+          "info1": "A novel set in the Jazz Age."
+        },
+        {
+          "id": "9c56",
+          "title": "The Great Gatsby",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKi5lknrw7SIwZ01RQRqyvtXz2bFxrUsGVpA&s",
+          "price": "1500",
+          "info1": "A novel set in the Jazz Age."
+        },
+        {
+          "id": "64ce",
+          "title": "The Lord of the Rings: The Fellowship of the Ring",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROXcRkMBWPAQHM1il6uE4VDvXCmvnef2op1w&s",
+          "price": 1800,
+          "info1": "The first book in the epic fantasy series about the quest to destroy the One Ring."
+        }
+      ],
+      "totalPrice": 15900
     }
   ]
 }
